@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/258adbb6e4f3e83cd3b355f84e3fa002_custom.css.8f98d7b4113a6cb49fbe14afb0d7cd68.css?v=8f9eea03f1" media="all">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/xregexp/xregexp-all.js"></script>
 
     <style>
       #form textarea {
@@ -130,9 +131,11 @@
 	  var atext=text.split(/[\r\n]+/);
 	  var L,i;
 
-	  console.log(atext);
+	  const reg=XRegExp('\\p{c}',"gu");
 
-          for(i=0,L=0;i<atext.length;i++) L+=atext[i].trim().length;
+          for(i=0,L=0;i<atext.length;i++) {
+	      L+=atext[i].trim().replace(reg,"").length;
+	  }
 
 	  $("#caratteri").html(L);
           if (L>max_chars) {
