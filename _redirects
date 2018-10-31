@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+https://simplehtml.costruttoridimondi.org/* https://simplehtml.mygor.xyz/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://competent-brown-ba5937.netlify.com/* https://simplehtml.mygor.xyz/:splat 301!
