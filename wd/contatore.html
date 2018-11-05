@@ -14,101 +14,186 @@
     <meta name="theme-color" content="#fda430"/>
     <link rel="canonical" href="https://www.writersdream.org/forum/forums/" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet" referrerpolicy="origin"/>
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/341e4a57816af3ba440d891ca87450ff_framework.css.9504e9588f9a054f9b539dea5175c1ff.css?v=8f9eea03f1" media="all"/>
-    
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/05e81b71abe4f22d6eb8d1a929494829_responsive.css.c65780231df91a7129eb16893cee9185.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/20446cf2d164adcc029377cb04d43d17_flags.css.a335fa78343927fd37196480376e9b8a.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/ec0c06d47f161faa24112e8cbf0665bc_chatbox.css.f8a4d4696243fc9bf72256e23f4330dd.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/90eb5adf50a8c640f633d47fd7eb1778_core.css.db20f7f8f2cbb32d984c52da5f1ae91a.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css.956353d6c8e27cf2affbc1919f7fd42f.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/62e269ced0fdab7e30e026f1d30ae516_forums.css.c2dd5f84b536074236abacfa90ff5205.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/76e62c573090645fb99a15a363d8620e_forums_responsive.css.c6d350f9ef471fca92e6ff3a7f550b87.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/51a672ecd6862df2c2f1969522683ee9_calendar.css.972af17b0e4586dfd03221b9c5a8959c.css?v=8f9eea03f1" media="all">
-
-    <link rel="stylesheet" href="https://www.writersdream.org/forum/uploads/css_built_12/258adbb6e4f3e83cd3b355f84e3fa002_custom.css.8f98d7b4113a6cb49fbe14afb0d7cd68.css?v=8f9eea03f1" media="all">
-
+    <link href='https://fonts.googleapis.com/css?family=Proza+Libre:400,500,600,700,800' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/xregexp/xregexp-all.js"></script>
 
     <style>
-      #form textarea {
-          height: 1000px;
-      }
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(240, 240, 240);
+}
 
-      #form {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      }
+svg {
+    vertical-align: middle;
+}
 
-      #form #top {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      align-items: stretch;
-      }
+svg.defs {
+    display: none;
+}
 
-      #form span {
-      font-size: 1.2em;
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.2);;
-      min-width: 10em;
-	  line-height: 2em;
-      flex-grow: 1;
-      vertical-align: middle;
-      padding-left: .4em;
-      }
+header {
+    background-color: rgb(253, 164, 48);
+    padding: 1em;
+    border-bottom: .5em solid black;
+    margin: 0;
+    padding: .3em;
+    font-family: 'Proza Libre', sans-serif;
+    padding-left: 1em;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    padding-bottom: 2em;
+}
 
-      #form span.red {
-      border: 1px solid red;
-      background: rgba(255, 255, 0, 0.5);;
-      }
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a sup {
+    font-weight: 800;
+}
+
+header svg {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+
+h1 {
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.15;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+}
+
+h1 svg {
+    width: 2em;
+    height: 2em;
+}
+
+main {
+    margin: 1em;
+}
+
+#form textarea {
+    height: 1000px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#form #top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#form span {
+    font-size: 1.2em;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);;
+    min-width: 10em;
+    line-height: 2em;
+    flex-grow: 1;
+    vertical-align: middle;
+    padding-left: .4em;
+}
+
+#form span.red {
+    border: 1px solid red;
+    background: rgba(255, 255, 0, 0.5);;
+}
 
     </style>
 
   </head>
 
-  <body class="ipsApp ipsApp_front ipsJS_has ipsClearfix" data-controller="core.front.core.app"  data-message=""  data-pageapp="forums" data-pagelocation="front" data-pagemodule="forums" data-pagecontroller="index">
-    <div id="barra_mobile">
-      <div id="ipsLayout_header" class="ipsClearfix">
-	<header><div class="ipsLayout_container">
-	    <a href='https://www.writersdream.org/forum/' id='elLogo' accesskey='1'>
-	      <img src="https://www.writersdream.org/forum/uploads/monthly_2018_01/logowp3.png.64813cc57dd70ba75b0c3e4c88d454e9.png" alt='Writer&#039;s Dream - Community'/>
-	    </a>
-	  </div>
-	</header>
-      </div>
-    </div>
+
+  <body>
+
+    <svg class="defs"
+	 width="162"
+	 height="162"
+	 viewBox="0 0 42.862501 42.862501"
+	 version="1.1"
+	 id="svg8">
+      <defs>
+	<g
+	   id="logowd"
+	   style="display:inline;opacity:1"
+	   transform="translate(58.923828,-112.50242)">
+	  <circle
+	     style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.64583302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+	     id="path4669"
+	     cx="-37.492577"
+	     cy="133.93367"
+	     r="21.355656" />
+	  <g
+	     id="g4667"
+	     transform="rotate(-30,-64.039674,138.11589)">
+	    <path
+               transform="matrix(0.26458333,0,0,0.26458333,-1.6666667e-7,-1.0416666e-6)"
+               id="path4588"
+               d="m -148.92773,512.51953 a 44.999997,44.999997 0 0 0 -43.5918,34 H -167 v -9 h -10.63281 a 35.000001,35.000001 0 0 1 28.70508,-15 35.000001,35.000001 0 0 1 29.41992,16.04492 c 4.60217,3.62562 9.2574,6.38941 14.24414,8.29297 a 44.999997,44.999997 0 0 0 -43.66406,-34.33789 z m 43.66796,55.66016 c -5.01581,1.91412 -9.69594,4.70122 -14.32421,8.35742 a 35.000001,35.000001 0 0 1 -29.34375,15.98242 35.000001,35.000001 0 0 1 -28.67188,-15 H -167 v -9 h -25.50586 a 44.999997,44.999997 0 0 0 43.57813,34 44.999997,44.999997 0 0 0 43.66796,-34.33984 z"
+               style="display:inline;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:9.99999905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+	    <path
+               d="m -43.656253,152.27292 3e-6,-9.525 c 0,-0.79375 2.11667,-0.79375 2.11667,0 l -3e-6,9.525 c 0,0.79375 -2.11667,0.79375 -2.11667,0 z m 9.789587,-11.37713 c -1.852084,3.17504 -3.175,3.17504 -7.14375,3.175 v 6.87917 c 3.96875,0 5.291666,4e-5 7.14375,3.175 0.79375,-2.64583 7.408333,-6.08542 14.022916,-6.08542 0.172448,0 0.287731,-0.11305 0.347783,-0.26458 h -12.289172 c -0.120507,0.46672 -0.541165,0.79305 -1.023194,0.79375 -0.584502,0 -1.058333,-0.47383 -1.058333,-1.05834 0,-0.5845 0.473831,-1.05833 1.058333,-1.05833 0.482219,5.3e-4 0.903155,0.32684 1.02371,0.79375 h 12.288656 c -0.06005,-0.15153 -0.175335,-0.26458 -0.347783,-0.26458 -6.614583,0 -13.229166,-3.43958 -14.022916,-6.08542 z m -23.547917,5.55629 h 12.435416 c 0.79375,0 0.79375,2.11667 0,2.11667 h -12.435416 c -0.79375,0 -0.79375,-2.11667 0,-2.11667 z"
+               style="opacity:1;fill:#fda430;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.64583325;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+               id="rect4606-6" />
+	  </g>
+	</g>
+      </defs>
+    </svg>
+
+    <header>
+	<a href='https://www.writersdream.org/forum/' id='elLogo' accesskey='1'>
+	<svg
+	   width="162"
+	   height="162"
+	   viewBox="0 0 42.862501 42.862501"
+	   version="1.1"
+	   id="svg8">
+	  <use xlink:href="#logowd" />
+	</svg>
+
+	WRITER<sup>'</sup>S DREAM
+	</a>
+     
+    </header>
 
     <main id="ipsLayout_body" class="ipsLayout_container">
-      <div id="ipsLayout_contentArea">
-	<div id="ipsLayout_contentWrapper">
-	  <div id="ipsLayout_mainArea">
-	    <div class='ipsPageHeader ipsClearfix ipsSpacer_bottom cForumHeader'>
-	      <h1 class='ipsType_pageTitle'>Contatore ufficiale Writer&apos;s Dream</h1>
-	    </div>
-	    
-	    <section id="form">
+      <h1 class='ipsType_pageTitle'>
 
-	      <div id="top">
-		<input type="button" name="conta" id="conta" value="Conta caratteri"/>
-		<span id="caratteri">&nbsp;</span>
-	      </div>
-	      <textarea id="text"></textarea>
-	    </section>
+	<svg
+	   width="162"
+	   height="162"
+	   viewBox="0 0 42.862501 42.862501"
+	   version="1.1"
+	   id="svg8">
+	  <use xlink:href="#logowd" />
+	</svg>
+
+	Contatore ufficiale Writer&apos;s Dream
+      </h1>
 	    
-	    
-	  </div>
+      <section id="form">
+	
+	<div id="top">
+	  <input type="button" name="conta" id="conta" value="Conta caratteri"/>
+	  <span id="caratteri">&nbsp;</span>
 	</div>
-      </div>
+	<textarea id="text"></textarea>
+      </section>
+      
+	    
     </main>
 
     <script>
@@ -133,8 +218,9 @@
 
 	  const reg=XRegExp('\\p{c}',"gu");
 
-          for(i=0,L=0;i<atext.length;i++) {
+          for(i=0,L=0,L_orig=0;i<atext.length;i++) {
 	      L+=atext[i].trim().replace(reg,"").length;
+	      L_orig+=atext[i].length+1;
 	  }
 
 	  $("#caratteri").html(L);
@@ -143,6 +229,9 @@
 	  } else {
 	      $("#caratteri").removeClass("red");
 	  }
+
+	console.log("calc:",L,"orig:",L_orig);
+
       });
     </script>
 
