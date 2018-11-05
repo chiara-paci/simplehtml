@@ -23,6 +23,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: rgb(240, 240, 240);
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
 }
 
 svg {
@@ -66,7 +67,6 @@ h1 {
     font-size: 2em;
     font-weight: 400;
     line-height: 1.15;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
 }
 
 h1 svg {
@@ -93,12 +93,39 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: flex-start;
+    padding-bottom: 1em;
 }
 
-#form span {
+#form #conta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+#form #conta input {
+    flex-grow: 0;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+#form textarea.red {
+    border: 1px solid #9b2a00;
+}
+
+
+#form #conta span.red {
+    border: 1px solid #9b2a00;
+    background: rgba(255, 141, 99, .5);;
+    color: #9b2a00;
+}
+
+#form #conta span {
     font-size: 1.2em;
-    background: white;
+    background: rgba(255,255,255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.2);;
     min-width: 10em;
     line-height: 2em;
@@ -107,10 +134,33 @@ main {
     padding-left: .4em;
 }
 
-#form span.red {
-    border: 1px solid red;
-    background: rgba(255, 255, 0, 0.5);;
+#form #maxbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-left: 1em;
+    color: rgb(141, 154, 166);
+    background: rgba(141, 154, 166, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);;
 }
+
+
+#form #maxbox label {
+    flex-grow: 1;
+    flex-shrink: 0;
+    vertical-align: middle;
+    font-size: .8em;
+    text-align: center;
+}
+
+#form #maxbox input {
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: .5em;
+}
+
 
     </style>
 
@@ -187,8 +237,14 @@ main {
       <section id="form">
 	
 	<div id="top">
-	  <input type="button" name="conta" id="conta" value="Conta caratteri"/>
-	  <span id="caratteri">&nbsp;</span>
+	  <div id="conta">
+	    <input type="button" name="conta" id="conta" value="Conta caratteri"/>
+	    <span id="caratteri">&nbsp;</span>
+	  </div>
+	  <div id="maxbox">
+	    <label for="maxchars">massimo numero di caratteri</label>
+	    <input type="number" name="maxchars" id="maxchars" value=0/>
+	  </div>
 	</div>
 	<textarea id="text"></textarea>
       </section>
@@ -198,18 +254,20 @@ main {
 
     <script>
 
-    var max_chars=8000;
+    var MAX_CHARS=8000;
 
     if (window.location.search) {
 	var query=window.location.search.substr(1);
 	var qvalue=parseInt(query,10);
 	console.log(query,qvalue);
-	if (qvalue) max_chars=qvalue;
+	if (qvalue) MAX_CHARS=qvalue;
     }
 
-    console.log(max_chars);
+    console.log(MAX_CHARS);
+    $("#maxchars").val(MAX_CHARS);
 
       $("#conta").click(function(event){
+          var max_chars=$("#maxchars").val();
 	  event.preventDefault();
 	  var text=$("#text").val();
 
@@ -226,8 +284,10 @@ main {
 	  $("#caratteri").html(L);
           if (L>max_chars) {
 	      $("#caratteri").addClass("red");
+	      $("#text").addClass("red");
 	  } else {
 	      $("#caratteri").removeClass("red");
+	      $("#text").removeClass("red");
 	  }
 
 	console.log("calc:",L,"orig:",L_orig);
