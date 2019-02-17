@@ -1,0 +1,157 @@
+body {
+    padding: 1em;
+    margin: 0;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+p {
+    text-align: justify;
+    text-indent: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+ul, li {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+p,li {
+    line-height: 2em;
+}
+
+
+header {
+    margin-top: .5em;
+    margin-bottom: 1em;
+
+    h1 {
+	text-align: center;
+	font-size: 3em;
+	padding: 0;
+	margin: 0;
+	margin-bottom: .5em;
+    }
+
+    p.pretitle {
+	font-size: 1.5em;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+    }
+
+    div.subtitle {
+	font-style: italic;
+	margin: auto;
+	width: 80%;
+	font-size: 10pt;
+	p,li{
+	    line-height: 1.2em;
+	}
+    }
+    
+}
+
+main {
+
+    section.index {
+	p {
+	    line-height: 1.5em;
+	    text-indent: 0;
+	}
+    }
+
+    table {
+	width: 90%;
+	margin: auto;
+    }
+
+    h1 {
+	font-size: 1.5em;
+	font-weight: 400;
+	line-height: 1.5em;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	text-align: left;
+	margin-top: 1em;
+	margin-bottom: .5em;
+	
+    }
+    
+    h2 {
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height: 1.5;
+	border-bottom: 1px solid black;
+	text-align: left;
+	
+    }
+
+    
+    figure {
+	border: 1px solid #909090;
+	padding: 1em;
+
+	width: 80%;
+	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	figcaption {
+	    text-align: center;
+	    font-size: .8em;
+	    margin-top: .3em;
+	    border-top: 1px solid #909090;
+	}
+    }
+
+    figure.image {
+	text-align: center;
+	img {
+	    margin: auto;
+	    max-width: 80%;
+	}
+    }
+
+    figure.table {
+	text-align: center;
+
+	table {
+	    margin: auto;
+	    
+	    thead {
+		th {
+		    border-bottom: 1px solid black;
+		}
+	    }
+
+	    tbody {
+		td,th {
+		    vertical-align: top;
+		    text-align: left;
+		border-bottom: 1px solid black;
+		}
+
+	    }
+
+	}
+
+	table.dataframe {
+	    td {
+		text-align: right;
+	    }
+
+	    .annotation {
+		font-size: .8em;
+		border-top: 1px solid #909090;
+		text-align: center;
+	    }
+	}
+
+    }
+
+}
