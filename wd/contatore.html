@@ -240,6 +240,7 @@ main {
 	
 	<div id="top">
 	  <div id="conta">
+	    <input type="button" name="cancella" id="cancella" value="Ripulisci"/>
 	    <input type="button" name="conta" id="conta" value="Conta caratteri"/>
 	    <span id="caratteri">&nbsp;</span>
 	  </div>
@@ -255,6 +256,7 @@ main {
     </main>
 
     <script>
+/*'*/
 
     var MAX_CHARS=8000;
 
@@ -268,33 +270,50 @@ main {
     console.log(MAX_CHARS);
     $("#maxchars").val(MAX_CHARS);
 
-      $("#conta").click(function(event){
-          var max_chars=$("#maxchars").val();
-	  event.preventDefault();
-	  var text=$("#text").val();
+    var conta_caratteri=function(){
+        var max_chars=$("#maxchars").val();
+	var text=$("#text").val();
+	var atext=text.split(/[\r\n]+/);
+	var L,i,L_orig;
+	
+	const reg=XRegExp('\\p{c}',"gu");
 
-	  var atext=text.split(/[\r\n]+/);
-	  var L,i;
-
-	  const reg=XRegExp('\\p{c}',"gu");
-
-          for(i=0,L=0,L_orig=0;i<atext.length;i++) {
-	      L+=atext[i].trim().replace(reg,"").length;
-	      L_orig+=atext[i].length+1;
-	  }
-
-	  $("#caratteri").html(L);
-          if (L>max_chars) {
-	      $("#caratteri").addClass("red");
-	      $("#text").addClass("red");
-	  } else {
-	      $("#caratteri").removeClass("red");
-	      $("#text").removeClass("red");
-	  }
-
+        for(i=0,L=0,L_orig=0;i<atext.length;i++) {
+	    L+=atext[i].trim().replace(reg,"").length;
+	    L_orig+=atext[i].length+1;
+	}
 	console.log("calc:",L,"orig:",L_orig);
+	
+	$("#caratteri").html(L);
+        if (L>max_chars) {
+	    $("#caratteri").addClass("red");
+	    $("#text").addClass("red");
+	} else {
+	    $("#caratteri").removeClass("red");
+	    $("#text").removeClass("red");
+	}
+	return L;
+    };
 
-      });
+conta_caratteri();
+
+    $("#text").on("input",function(event){
+	console.log("change");
+	conta_caratteri();
+    });
+
+
+    $("#conta").click(function(event){
+	event.preventDefault();
+	conta_caratteri();
+    });
+
+    $("#cancella").click(function(event){
+	event.preventDefault();
+	var text=$("#text").val("");
+	conta_caratteri();
+    });
+
     </script>
 
   </body>
