@@ -12,26 +12,33 @@
       body {
       display: flex;
       flex-direction: column;
+	  flex-wrap: nowrap;
+	  justify-content: center;
+	  align-items: center;
+	  align-content: center;
+
       padding: 0;
       margin: 0;
       background-color: rgb(240, 240, 240);
       font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
       }
 
-      p,span {
+      div.headings,span {
       text-align: center;
       }
       
       span.number {
-            font-size: 2em;
+            font-size: 2.5em;
       }
 
       span.label {
             font-size: .8em;
       }
 
-p {
+div.headings {
     font-size: 1em;
+padding: 0;
+    margin: 0;
 }
 
       main {
@@ -60,7 +67,7 @@ p {
 
 
   <body>
-    <p id="title"></p>
+    <div class="headings" id="title"></div>
     
     <main>
     
@@ -86,7 +93,7 @@ p {
 
     </main>
 
-    <p id="target"></p>
+    <div class="headings" id="target"></div>
     
     <script src="./luxon.min.js"></script>
 
@@ -132,9 +139,8 @@ if (window.location.search) {
     var query=window.location.search.substr(1);
     var argv=query.split("&");
     TARGET_DT=DateTime.fromISO(argv[0], {zone: 'Europe/Rome'});
-    TITLE=argv[1];
 
-    $("#title").html(argv[1]);
+    $("#title").html(decodeURI(argv[1]));
     $("#target").html(TARGET_DT.toFormat('cccc d LLLL yyyy', { locale: "it" }));
     
 }
