@@ -6,9 +6,16 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet" referrerpolicy="origin"/>
     <link rel="shortcut icon" type="image/x-icon" href="https://www.writersdream.org/favicon.ico"/>
 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     
     <style>
+
+* {
+  box-sizing: border-box;
+}
 
 body {
     display: flex;
@@ -20,7 +27,6 @@ body {
     
     padding: 0;
     margin: 0;
-    /*background-color: rgb(240, 240, 240);*/
     background-color: rgb(255, 255, 255);
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
 }
@@ -28,7 +34,6 @@ body {
 div.headings,span.label {
     text-align: center;
     color: rgb(253, 164, 48);
-
 }
 
 span {
@@ -36,16 +41,16 @@ span {
 }
 
 span.number {
-    font-size: 2.5em;
+    font-size: 10vw;
 color: #505050;
 }
 
 span.label {
-    font-size: .8em;
+    font-size: 3.5vw;
 }
 
 div.headings {
-    font-size: 1em;
+    font-size: 4vw;
     padding: 0;
     margin: 0;
 }
@@ -53,14 +58,15 @@ div.headings {
 main {
     display: flex;
     flex-direction: row;
-    padding: .5em;
+    padding: 1vw;
+    width: 100vw;
 }
 
 div.box {
     display: flex;
     flex-direction: column;
-    padding: 1em;
-    min-width: 4em;
+    padding: 1vw;
+    width: 25vw;
     border-right: 1px solid  rgb(253, 164, 48);
 }
 
