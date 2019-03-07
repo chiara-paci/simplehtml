@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it-IT" dir="ltr">
+  <head><title>Conto alla rovescia Writer&apos;s Dream</title>
+    
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet" referrerpolicy="origin"/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.writersdream.org/favicon.ico"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <style>
+      body {
+      padding: 0;
+      margin: 0;
+      background-color: rgb(240, 240, 240);
+      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial;
+      }
+
+      span {
+      text-align: center;
+      }
+      
+      span.number {
+            font-size: 3em;
+      }
+
+      span.label {
+            font-size: .8em;
+      }
+
+      main {
+      display: flex;
+      flex-direction: row;
+      padding: .5em;
+      }
+
+      div.box {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      min-width: 4em;
+      border-right: 1px solid black;
+      }
+
+      div.box:last-of-type {
+      border-right: none;
+      
+      }
+
+    </style>
+
+  </head>
+
+
+  <body>
+    
+    
+    <main>
+    
+      <div class="box" id="daysbox">
+	<span id="days" class="number"></span>
+	<span class="label">giorni</span>
+      </div>
+
+      <div class="box">
+	<span id="hours" class="number"></span>
+	<span class="label">ore</span>
+      </div>
+
+      <div class="box">
+	<span id="minutes" class="number"></span>
+	<span class="label">minuti</span>
+      </div>
+
+      <div class="box">
+	<span id="seconds" class="number"></span>
+	<span class="label">secondi</span>
+      </div>
+
+    </main>
+    
+    <script src="./luxon.min.js"></script>
+
+    <script>
+
+var DateTime = luxon.DateTime;
+var Interval = luxon.Interval;
+
+var TARGET_DT = "";
+
+var pad = function(num) {
+    if (num>=10) return num.toString();
+    return "0"+num.toString();
+}
+
+var update = function(){
+    if (!TARGET_DT) return;
+    var delta=TARGET_DT.diffNow(["days","hours","minutes","seconds"],{zone: 'Europe/Rome'});
+
+    console.log(delta.days,delta.hours,delta.minutes,Math.floor(delta.seconds));
+
+    var days=delta.days,hours=delta.hours,minutes=delta.minutes,seconds=Math.floor(delta.seconds);
+
+    if (days > 0) {
+	$("#days").html(days);
+    } else {
+	$("#days").hide();
+    };
+
+    if (hours < 0) {
+	$("#hours").html("00");
+	$("#minutes").html("00");
+	$("#seconds").html("00");
+    } else {
+	$("#hours").html(pad(hours));
+	$("#minutes").html(pad(minutes));
+	$("#seconds").html(pad(seconds));
+    }
+    
+};
+      
+if (window.location.search) {
+    var query=window.location.search.substr(1);
+    TARGET_DT=DateTime.fromISO(query, {zone: 'Europe/Rome'});
+}
+
+update();
+
+setInterval(update,1000);
+
+    </script>
+
+  </body>
+
+</html>
