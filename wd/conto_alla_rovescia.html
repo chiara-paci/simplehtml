@@ -53,7 +53,7 @@
 
 
   <body>
-    
+    <p id="title"></p>
     
     <main>
     
@@ -78,6 +78,8 @@
       </div>
 
     </main>
+
+    <p id="target"></p>
     
     <script src="./luxon.min.js"></script>
 
@@ -121,7 +123,13 @@ var update = function(){
       
 if (window.location.search) {
     var query=window.location.search.substr(1);
-    TARGET_DT=DateTime.fromISO(query, {zone: 'Europe/Rome'});
+    var argv=query.split("&");
+    TARGET_DT=DateTime.fromISO(argv[0], {zone: 'Europe/Rome'});
+    TITLE=argv[1];
+
+    $("#title").html(argv[1]);
+    $("#target").html(TARGET_DT.toFormat('c d LLLL yyyy', { locale: "it" }));
+    
 }
 
 update();
