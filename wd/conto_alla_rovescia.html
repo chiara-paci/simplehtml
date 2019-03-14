@@ -228,7 +228,7 @@ if (window.location.search) {
 	        target_text=TARGET_DT.toFormat('ccc d LLL yyyy hh:mm:ss', { locale: "it" });
 	        break;
             default:
-	        target_text=argv[2];
+	        target_text=decodeURI(argv[2]);
                 break;
 	}
     }
