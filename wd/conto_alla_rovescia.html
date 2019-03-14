@@ -213,10 +213,28 @@ if (window.location.search) {
     var query=window.location.search.substr(1);
     var argv=query.split("&");
     TARGET_DT=DateTime.fromISO(argv[0], {zone: 'Europe/Rome'});
-
     $("#title").html(decodeURI(argv[1]));
-    $("#target").html(TARGET_DT.toFormat('cccc d LLLL yyyy', { locale: "it" }));
-    
+    var target_text=TARGET_DT.toFormat('cccc d LLLL yyyy', { locale: "it" });
+    switch (argv.length){
+    case 2:
+	break;
+    case 3:
+	switch (argv[2]) {
+	    case "date": break;
+	    case "time": 
+	        target_text=TARGET_DT.toFormat('yy:mm:ss', { locale: "it" });
+	        break;
+	    case "datetime": 
+	        target_text=TARGET_DT.toFormat('ccc d LLL yyyy hh:mm:ss', { locale: "it" });
+	        break;
+            default:
+	        target_text=argv[2];
+                break;
+	}
+    }
+
+    $("#target").html(target_text);
+
 }
 
 update();
