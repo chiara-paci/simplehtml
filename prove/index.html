@@ -15,12 +15,6 @@
 
 <script>
 
-$("input").change(function(){
-    var val=$(this).val();
-    var attr=$(this).attr("name");
-    $("#output").append("<p>"+attr+": "+val+"</p>");
-});
-
 var read_pin=function(){
     var val=$("input[name=pin]").val();
     $("#output").html("<p>PIN: "+val+"</p>");    
