@@ -38,16 +38,17 @@
 <script>
 
 var read_pin=function(){
-    var val=$("input[name=pin]").val();
-    $("#output").html("<p>PIN: "+val+"</p>");    
-    console.log(val);
+    $("#output").html("");
+
+    $("input").each(function(){
+	var val=$(this).val();
+	var attr=$(this).attr("name")
+	$("#output").html("<p>"+attr+": "+val+"</p>");    
+	console.log(attr,val);
+    });
+
 };
 
-var focus_pin=function(){
-    $("input[name=pin]").focusin();
-};
-
-setInterval(focus_pin,500);
 setInterval(read_pin,1000);
 
 </script>
