@@ -23,7 +23,7 @@ $("input").change(function(){
 
 var read_pin=function(){
     val=$("input[name=pin]").val();
-    $("#output").append("<p>PIN: "+val+"</p>");    
+    $("#output").html("<p>PIN: "+val+"</p>");    
     console.log(val);
 }
 
