@@ -21,6 +21,14 @@ $("input").change(function(){
     $("#output").append("<p>"+attr+": "+val+"</p>");
 });
 
+var read_pin=function(){
+    val=$("input[name=pin]").val();
+    $("#output").append("<p>PIN: "+val+"</p>");    
+    console.log(val);
+}
+
+setInterval(read_pin,1000);
+
 </script>
 
 </body>
