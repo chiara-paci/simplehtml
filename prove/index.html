@@ -14,21 +14,24 @@
 
 <form autocomplete="on" action="" method="POST">
 
-<label for="frmNameCC">Name on card</label>
+<p><label for="frmNameCC">Name on card</label>
 <input name="ccname" id="frmNameCC" required 
-       placeholder="Full Name" autocomplete="cc-name">
+       placeholder="Full Name" autocomplete="cc-name"></p>
 
-<label for="frmCCNum">Card Number</label>
-<input name="cardnumber" id="frmCCNum" required autocomplete="cc-number">
+<p><label for="frmCCNum">Card Number</label>
+<input name="cardnumber" id="frmCCNum" required autocomplete="cc-number"></p>
 
-<label for="frmCCCVC">CVC</label>
-<input name="cvc" id="frmCCCVC" required autocomplete="cc-csc">
+<p><label for="frmCCCVC">CVC</label>
+<input name="cvc" id="frmCCCVC" required autocomplete="cc-csc"></p>
 
-<label for="frmCCExp">Expiry</label>
+<p><label for="frmCCExp">Expiry</label>
 <input name="cc-exp" id="frmCCExp" required placeholder="MM-YYYY" autocomplete="cc-exp">
+</p>
 
-
-<input name="pin" type="password" autocomplete="one-time-code"/>
+<p>
+<label for="frmPin">Expiry</label>
+<input name="pin" id="frmPin" type="password" autocomplete="one-time-code"/>
+</p>
 </form>
 
 <div id="output"></div>
