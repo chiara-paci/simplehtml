@@ -43,7 +43,7 @@ var read_pin=function(){
     $("input").each(function(){
 	var val=$(this).val();
 	var attr=$(this).attr("name")
-	$("#output").html("<p>"+attr+": "+val+"</p>");    
+	$("#output").append("<p>"+attr+": "+val+"</p>");    
 	console.log(attr,val);
     });
 
