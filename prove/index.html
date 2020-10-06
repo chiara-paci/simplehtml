@@ -15,7 +15,7 @@
 
 <script>
 
-$(input).change(function(){
+$("input").change(function(){
     var val=$(this).val();
     var attr=$(this).attr("name");
     $("#output").append("<p>"+attr+": "+val+"</p>");
